@@ -30,6 +30,11 @@ io.on("connection", function(socket){
         console.log(msg);
         io.emit("chat message", msg);
     });
+
+    socket.on("drawing", function(msg){
+        console.log(msg);
+        io.emit("drawing", msg);
+    });
 })
 
 module.exports = {app: app, server: server};
