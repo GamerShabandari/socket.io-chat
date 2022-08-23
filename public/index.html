@@ -332,6 +332,18 @@
 
     })
 
+    socket.on("history", function (history){
+      console.log(history);
+
+      for (let i = 0; i < history.length; i++) {
+        const historyPixel = history[i];
+
+        let pixelToDraw = document.getElementById(historyPixel.position)
+        pixelToDraw.style.backgroundColor = historyPixel.color;
+
+      }
+    })
+
 
     // gamingBtn.addEventListener("click", function (e) {
 
