@@ -6,7 +6,7 @@
 </head>
 
 <body>
-  <!-- <h1>Express</h1>
+  <h1>Express</h1>
   <p>Welcome to Socket</p>
   <h4>choose chat-room</h4>
   <button id="gamingBtn">Gaming Chat</button>
@@ -28,7 +28,7 @@
 
   <br>
   <br>
-  <br> -->
+  <br>
 
   <div id="gridContainer"
     style="border: 1px solid red; height: 800px; width: 800px; display: flex; flex-direction: column; flex-wrap: wrap; padding: 5px;">
@@ -288,16 +288,16 @@
 
     const socket = io();
 
-    // form = document.getElementById("form");
-    // input = document.getElementById("input");
-    // chat = document.getElementById("chat");
-    // saveBtn = document.getElementById("saveBtn");
-    // let name = document.getElementById("name");
-    // let username = "";
-    // let chatroom = "";
-    // let gamingBtn = document.getElementById("gamingBtn");
-    // let sportsBtn = document.getElementById("sportsBtn");
-    // let musicBtn = document.getElementById("musicBtn");
+    form = document.getElementById("form");
+    input = document.getElementById("input");
+    chat = document.getElementById("chat");
+    saveBtn = document.getElementById("saveBtn");
+    let name = document.getElementById("name");
+    let username = "";
+    let chatroom = "";
+    let gamingBtn = document.getElementById("gamingBtn");
+    let sportsBtn = document.getElementById("sportsBtn");
+    let musicBtn = document.getElementById("musicBtn");
 
     let gridContainer = document.getElementById("gridContainer");
 
@@ -345,57 +345,57 @@
     })
 
 
-    // gamingBtn.addEventListener("click", function (e) {
+    gamingBtn.addEventListener("click", function (e) {
 
-    //   console.log("u wanna talk gaming");
-    //   chatroom = "gaming";
-    //   chat.innerHTML = "";
+      console.log("u wanna talk gaming");
+      chatroom = "gaming";
+      chat.innerHTML = "";
 
-    // });
+    });
 
-    // sportsBtn.addEventListener("click", function (e) {
+    sportsBtn.addEventListener("click", function (e) {
 
-    //   console.log("u wanna talk sports");
-    //   chatroom = "sports"
-    //   chat.innerHTML = "";
+      console.log("u wanna talk sports");
+      chatroom = "sports"
+      chat.innerHTML = "";
 
-    // });
+    });
 
-    // musicBtn.addEventListener("click", function (e) {
+    musicBtn.addEventListener("click", function (e) {
 
-    //   console.log("u wanna talk music");
-    //   chatroom = "music"
-    //   chat.innerHTML = "";
+      console.log("u wanna talk music");
+      chatroom = "music"
+      chat.innerHTML = "";
 
-    // });
+    });
 
-    // saveBtn.addEventListener("click", function (e) {
-    //   username = name.value;
-    //   console.log(username);
+    saveBtn.addEventListener("click", function (e) {
+      username = name.value;
+      console.log(username);
 
-    // });
+    });
 
-    // form.addEventListener("submit", function (e) {
-    //   e.preventDefault();
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    //   if (input.value && username) {
-    //     socket.emit("chat message", { text: input.value, user: username, room: chatroom });
-    //     input.value = "";
-    //   }
-    // });
+      if (input.value && username) {
+        socket.emit("chat message", { text: input.value, user: username, room: chatroom });
+        input.value = "";
+      }
+    });
 
-    // socket.on("chat message", function (msg) {
-    //   console.log(msg);
-    //   if (msg.room == chatroom) {
-    //     if (msg.user == username) {
-    //       chat.insertAdjacentHTML("beforeend", "<li style='color:red;'> " + msg.user + ": " + msg.text + "</li>");
-    //       return
-    //     }
+    socket.on("chat message", function (msg) {
+      console.log(msg);
+      if (msg.room == chatroom) {
+        if (msg.user == username) {
+          chat.insertAdjacentHTML("beforeend", "<li style='color:red;'> " + msg.user + ": " + msg.text + "</li>");
+          return
+        }
 
-    //     chat.insertAdjacentHTML("beforeend", "<li> " + msg.user + ": " + msg.text + "</li>");
+        chat.insertAdjacentHTML("beforeend", "<li> " + msg.user + ": " + msg.text + "</li>");
 
-    //   }
-    // })
+      }
+    })
 
 
 
